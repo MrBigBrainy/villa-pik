@@ -69,11 +69,8 @@ export default function Hero({ residences = [] }: { residences?: Residence[] }) 
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <div className="flex items-center gap-2 text-zinc-300 mb-4">
-                <span className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase border border-white/10">
-                  Featured
-                </span>
-                <span className="flex items-center text-sm tracking-wide uppercase">
-                  <MapPin className="w-4 h-4 mr-1" />
+                <span className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase border border-white/10 flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5" />
                   {activeResidence.location}
                 </span>
               </div>
