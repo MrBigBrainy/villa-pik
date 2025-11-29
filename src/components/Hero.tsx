@@ -81,10 +81,10 @@ export default function Hero() {
       </AnimatePresence>
 
       {/* Content Overlay */}
-      <div className="relative z-10 h-full container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div className="relative z-10 h-full container mx-auto px-6 flex flex-col justify-center">
         
         {/* Text Content */}
-        <div className="lg:col-span-8 text-white pt-20 lg:pt-0">
+        <div className="max-w-4xl text-white">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeSlide.id}
@@ -113,15 +113,15 @@ export default function Hero() {
           </AnimatePresence>
         </div>
 
-        {/* Thumbnails Strip */}
-        <div className="hidden lg:flex lg:col-span-4 flex-col gap-6 items-end justify-center h-full pr-8">
+        {/* Thumbnails Strip - Horizontal at Bottom Right */}
+        <div className="absolute bottom-8 right-6 hidden lg:flex flex-row gap-4 items-end z-20">
           {thumbnails.map((slide, index) => (
             <motion.div
               key={slide.id}
               layoutId={`bg-${slide.id}`}
               onClick={() => handleThumbnailClick(slides.indexOf(slide))}
-              className="relative w-48 h-64 rounded-xl overflow-hidden cursor-pointer shadow-2xl group border-2 border-white/20 hover:border-white/60 transition-colors"
-              whileHover={{ scale: 1.05, x: -10 }}
+              className="relative w-32 h-48 rounded-lg overflow-hidden cursor-pointer shadow-2xl group border border-white/20 hover:border-white/60 transition-colors"
+              whileHover={{ scale: 1.05, y: -10 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
               <div 
@@ -129,12 +129,6 @@ export default function Hero() {
                 style={{ backgroundImage: `url('${slide.image}')` }}
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
-              
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                <p className="text-white text-sm font-serif font-medium truncate">
-                  {slide.title}
-                </p>
-              </div>
             </motion.div>
           ))}
         </div>
