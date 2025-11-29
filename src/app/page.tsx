@@ -25,16 +25,11 @@ export default function Home() {
           id: doc.id,
           ...doc.data(),
         })) as Residence[];
+        console.log(data);
         
-        if (data.length === 0) {
-          // No data in Firestore, use static data
-          console.warn("No residences found in Firestore. Using static data. Visit /seed to populate the database.");
-          setResidences(staticResidences);
-          setError("Using sample data. Visit /seed to populate the database.");
-        } else {
-          // Filter out sold residences from public view
-          setResidences(data.filter(r => !r.sold));
-        }
+       const filterData = data.filter(r => !r.sold);
+          console.log(filterData)
+          setResidences(filterData);
       } catch (err: any) {
         console.error("Error fetching residences:", err);
         // Fallback to static data
@@ -45,19 +40,8 @@ export default function Home() {
       }
     };
 
-    // Add timeout to prevent infinite loading
-    const timeoutId = setTimeout(() => {
-      if (loading) {
-        console.warn("Firestore request timed out. Using static data.");
-        setResidences(staticResidences);
-        setError("Database connection timed out. Using sample data.");
-        setLoading(false);
-      }
-    }, 5000); // 5 second timeout
-
     fetchResidences();
 
-    return () => clearTimeout(timeoutId);
   }, []);
 
   return (
