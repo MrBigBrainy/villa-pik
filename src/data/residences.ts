@@ -10,6 +10,10 @@ export interface Residence {
     baths: number;
     sqft: number;
   };
+  amenities?: Array<{
+    icon: string; // lucide-react icon name
+    label: string;
+  }>;
   location: string;
   sold?: boolean;
 }
@@ -23,6 +27,17 @@ export const residences: Residence[] = [
     image: "/1.jpg",
     subImages: ["/1.jpg", "/2.jpg", "/3.jpg", "/5.jpg"],
     features: { beds: 5, baths: 6, sqft: 4500 },
+    amenities: [
+      { icon: "Waves", label: "Private Beach" },
+      { icon: "Wifi", label: "High-Speed WiFi" },
+      { icon: "Wind", label: "Ocean View" },
+      { icon: "Dumbbell", label: "Private Gym" },
+      { icon: "Shield", label: "24/7 Security" },
+      { icon: "Droplets", label: "Infinity Pool" },
+      { icon: "ChefHat", label: "Chef's Kitchen" },
+      { icon: "Sparkles", label: "Spa & Sauna" },
+      { icon: "Car", label: "3-Car Garage" },
+    ],
     location: "Malibu, CA",
   },
   {
@@ -33,6 +48,16 @@ export const residences: Residence[] = [
     image: "/2.jpg",
     subImages: ["/2.jpg", "/3.jpg", "/5.jpg", "/6.jpg"],
     features: { beds: 4, baths: 4, sqft: 3200 },
+    amenities: [
+      { icon: "Leaf", label: "Eco-Friendly" },
+      { icon: "Trees", label: "Garden View" },
+      { icon: "Droplets", label: "Natural Pool" },
+      { icon: "Flower", label: "Organic Garden" },
+      { icon: "Sun", label: "Solar Panels" },
+      { icon: "Bird", label: "Wildlife Sanctuary" },
+      { icon: "Flame", label: "Outdoor Fireplace" },
+      { icon: "CloudRain", label: "Rain Harvesting" },
+    ],
     location: "Ubud, Bali",
   },
   {
@@ -43,6 +68,17 @@ export const residences: Residence[] = [
     image: "/3.jpg",
     subImages: ["/3.jpg", "/5.jpg", "/6.jpg", "/7.jpg"],
     features: { beds: 6, baths: 7, sqft: 5500 },
+    amenities: [
+      { icon: "Home", label: "Smart Home" },
+      { icon: "Tv", label: "Home Theater" },
+      { icon: "Wine", label: "Wine Cellar" },
+      { icon: "Dumbbell", label: "Fitness Center" },
+      { icon: "Waves", label: "Lap Pool" },
+      { icon: "Camera", label: "Security System" },
+      { icon: "Zap", label: "EV Charging" },
+      { icon: "Music", label: "Sound System" },
+      { icon: "Moon", label: "Night Lighting" },
+    ],
     location: "Beverly Hills, CA",
   },
   {
@@ -53,6 +89,16 @@ export const residences: Residence[] = [
     image: "/5.jpg",
     subImages: ["/5.jpg", "/6.jpg", "/7.jpg", "/8.jpg"],
     features: { beds: 4, baths: 5, sqft: 3800 },
+    amenities: [
+      { icon: "Sunset", label: "Sunset Views" },
+      { icon: "Droplets", label: "Infinity Pool" },
+      { icon: "Sofa", label: "Outdoor Lounge" },
+      { icon: "Utensils", label: "Outdoor Kitchen" },
+      { icon: "Flame", label: "Fire Pit" },
+      { icon: "Wind", label: "Ocean Breeze" },
+      { icon: "Palmtree", label: "Palm Garden" },
+      { icon: "Coffee", label: "Bar Area" },
+    ],
     location: "Santorini, Greece",
   },
   {
@@ -63,6 +109,17 @@ export const residences: Residence[] = [
     image: "/6.jpg",
     subImages: ["/6.jpg", "/7.jpg", "/8.jpg", "/9.jpg"],
     features: { beds: 8, baths: 10, sqft: 8000 },
+    amenities: [
+      { icon: "Mountain", label: "Mountain Views" },
+      { icon: "Wine", label: "Private Vineyard" },
+      { icon: "GlassWater", label: "Wine Cellar" },
+      { icon: "Library", label: "Library" },
+      { icon: "Flame", label: "Multiple Fireplaces" },
+      { icon: "Users", label: "Guest House" },
+      { icon: "Tractor", label: "Estate Grounds" },
+      { icon: "ChefHat", label: "Professional Kitchen" },
+      { icon: "Sparkles", label: "Grand Ballroom" },
+    ],
     location: "Tuscany, Italy",
   },
   {
@@ -73,6 +130,16 @@ export const residences: Residence[] = [
     image: "/7.jpg",
     subImages: ["/7.jpg", "/8.jpg", "/9.jpg", "/10.jpg"],
     features: { beds: 5, baths: 5, sqft: 4000 },
+    amenities: [
+      { icon: "Palmtree", label: "Palm Garden" },
+      { icon: "Waves", label: "Lagoon Pool" },
+      { icon: "Coffee", label: "Tiki Bar" },
+      { icon: "UtensilsCrossed", label: "Outdoor BBQ" },
+      { icon: "Sunrise", label: "Sunrise Deck" },
+      { icon: "Bird", label: "Tropical Birds" },
+      { icon: "Droplets", label: "Waterfall Feature" },
+      { icon: "Umbrella", label: "Cabana" },
+    ],
     location: "Miami, FL",
   },
   {
@@ -83,6 +150,16 @@ export const residences: Residence[] = [
     image: "/8.jpg",
     subImages: ["/8.jpg", "/9.jpg", "/10.jpg", "/1.jpg"],
     features: { beds: 3, baths: 3, sqft: 2500 },
+    amenities: [
+      { icon: "Building", label: "City Views" },
+      { icon: "Flower", label: "Rooftop Garden" },
+      { icon: "Home", label: "Smart Home" },
+      { icon: "Shield", label: "Concierge" },
+      { icon: "Dumbbell", label: "Private Gym" },
+      { icon: "Wine", label: "Wine Room" },
+      { icon: "Zap", label: "Solar Panels" },
+      { icon: "TreePine", label: "Zen Garden" },
+    ],
     location: "New York, NY",
   },
   {
@@ -93,6 +170,17 @@ export const residences: Residence[] = [
     image: "/9.jpg",
     subImages: ["/9.jpg", "/10.jpg", "/1.jpg", "/2.jpg"],
     features: { beds: 6, baths: 6, sqft: 6000 },
+    amenities: [
+      { icon: "Waves", label: "Lakefront" },
+      { icon: "Ship", label: "Private Dock" },
+      { icon: "Home", label: "Boathouse" },
+      { icon: "Fish", label: "Fishing Pier" },
+      { icon: "Flame", label: "Stone Fireplace" },
+      { icon: "TreePine", label: "Forest Views" },
+      { icon: "Users", label: "Guest Cottage" },
+      { icon: "Library", label: "Study" },
+      { icon: "Music", label: "Music Room" },
+    ],
     location: "Lake Como, Italy",
   },
   {
@@ -103,6 +191,16 @@ export const residences: Residence[] = [
     image: "/10.jpg",
     subImages: ["/10.jpg", "/1.jpg", "/2.jpg", "/3.jpg"],
     features: { beds: 3, baths: 4, sqft: 2800 },
+    amenities: [
+      { icon: "Star", label: "Stargazing Deck" },
+      { icon: "Sun", label: "Solar Power" },
+      { icon: "Wind", label: "Desert Views" },
+      { icon: "Droplets", label: "Plunge Pool" },
+      { icon: "Flame", label: "Fire Features" },
+      { icon: "Tent", label: "Outdoor Pavilion" },
+      { icon: "Home", label: "Smart Climate" },
+      { icon: "Moon", label: "Night Sky Views" },
+    ],
     location: "Joshua Tree, CA",
   },
 ];

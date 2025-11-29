@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
-      <Hero />
+      <Hero residences={residences} />
       
       <section id="residences" className="py-20 md:py-32 bg-zinc-50">
         <div className="container mx-auto px-6">
