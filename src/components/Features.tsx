@@ -1,4 +1,7 @@
+"use client";
+
 import { Waves, Smartphone, ChefHat, Trees, Film, UserCheck } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Features() {
   const features = [
@@ -48,7 +51,14 @@ export default function Features() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="p-8 border border-zinc-100 hover:border-zinc-300 hover:shadow-lg transition-all duration-300 group">
+            <motion.div 
+              key={index} 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="p-8 border border-zinc-100 hover:border-zinc-300 hover:shadow-lg transition-all duration-300 group"
+            >
               <div className="mb-6 inline-block p-4 bg-zinc-50 group-hover:bg-zinc-900 transition-colors duration-300">
                 <feature.icon className="w-8 h-8 text-zinc-900 group-hover:text-white transition-colors duration-300" />
               </div>
@@ -56,7 +66,7 @@ export default function Features() {
               <p className="text-zinc-600 font-light leading-relaxed">
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
